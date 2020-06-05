@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Cor sei lá</title>
+ <script>
+ 				function getHex(x) {
+					  var hex = x.toString(16);
+  					return hex.length == 1 ? "0" + hex : hex;
+						}
+            
+        function wat() {
+            var niverz = new Date(document.getElementById("data").value);
+            var yr = ((niverz.getFullYear() % 100) * 100) % 256;
+            var mn = Math.floor(niverz.getMonth() * 21.33);
+            var dy = Math.floor(niverz.getDate() * 8.258);
+            document.getElementById("bloco").style.backgroundColor = 'rgb(' + dy + ' , ' + mn + ' , ' + yr + ')';
+            document.getElementById("datanumeroseila").innerHTML = '#' + getHex(dy) + getHex(mn) + getHex(yr) + '<br/>' + dy + ', ' + mn + ', ' + yr;
+                    }
+    </script>
+</head>
+<body>
+
+
+      <form>
+        <label for="data">Data:</label>
+        <input type="date" id="data" oninput="wat()"/>
+    </form>
+<div id="bloco" style="display:flex; justify-content:center; align-items:center; width: 300px; height: 200px; border: 5px outset black;
+  background-color: white;">
+    <p id="datanumeroseila">
+    </p>
+  </div>
+  
+   
+</body>
+</html>
