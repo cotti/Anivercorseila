@@ -9,9 +9,9 @@
             
         function wat() {
             var niverz = new Date(document.getElementById("data").value);
-            var yr = ((niverz.getFullYear() % 100) * 100) % 256;
-            var mn = Math.floor(niverz.getMonth() * 21.33);
-            var dy = Math.floor(niverz.getDate() * 8.258);
+            var yr = ((niverz.getUTCFullYear() % 100) * 100) % 256;
+            var mn = Math.floor((1 + niverz.getUTCMonth()) * 21.33);
+            var dy = Math.floor(niverz.getUTCDate() * 8.258);
             document.getElementById("bloco").style.backgroundColor = 'rgb(' + dy + ' , ' + mn + ' , ' + yr + ')';
             document.getElementById("datanumeroseila").innerHTML = '#' + getHex(dy) + getHex(mn) + getHex(yr) + '<br/>' + dy + ', ' + mn + ', ' + yr;
                     }
